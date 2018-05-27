@@ -184,20 +184,7 @@ class TestPetShop < MiniTest::Test
 
   # #These are 'integration' tests so we want multiple asserts.
   # #If one fails the entire test should fail
-  def test_sell_pet_to_customer__pet_found
-    customer = @customers[0]
-    pet = find_pet_by_name(@pet_shop,"Arthur")#returns full pet hash for Arthur
-
-    sell_pet_to_customer(@pet_shop, pet, customer)
-
-    assert_equal(1, customer_pet_count(customer))
-    #function needs to add pet to customer pet hash
-    assert_equal(1, pets_sold(@pet_shop))
-    #need to increase pets sold in admin hash by one
-    assert_equal(100, customer_cash(customer))
-    #customer cash needs to reduce by cost of pet.
-    assert_equal(1900, total_cash(@pet_shop))#petshop -> admin -> total cash needs to increase by value of pet sold
-  end
+  def 0
 
   def test_sell_pet_to_customer__pet_not_found
     customer = @customers[0]
